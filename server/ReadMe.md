@@ -52,15 +52,13 @@ You need to connect your database
             `RETURNING *` <!--  Outputs the data back (not using it will still add it to the db though) -->
             `INSERT INTO tableName (columnTypeToAdd) VALUES ($1)` <!--  Creates a new data entry -->
 
-            const newTodo = new pool.query(
+            const newTodo = await pool.query(
             "INSERT INTO todo (description) VALUES ($1) RETURNING *",
             [description]
             );
-
-            // await newTodo.save();
-            res.status(201).json();
-            //status 201 = new creation successful
-            // res.status(201).json(newTodo);
+            
+            <!-- status 201 = new creation successful -->
+            res.status(201).json(newTodo);
         } catch (error) {
             res.status(409).json({ message: error.message });
         }

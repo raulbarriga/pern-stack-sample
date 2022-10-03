@@ -16,13 +16,13 @@ export const createTodo = async (req, res) => {
     // $1 is a variabe for what value you put after it inside [] e.g. [description]
     // RETURNING * will output the data back (not using it will still add it to the db though)
     // INSERT INTO tableName (columnTypeToAdd) VALUES ($1) to create new data
-    const newTodo = await new pool.query(
-      "INSERT INTO todo (description) VALUES ($1) RETURNING *",
+    const newTodo = await pool.query(
+      "INSERT INTO todo (description) VALUES($1) RETURNING *",
       [description]
     );
-    
+
     //status 201 means new creation successful
-    res.status(201).json(newTodo);
+    res.status(201).json(newTodo.rows[0]);
   } catch (error) {
     res.status(409).json({ message: error.message });
   }
