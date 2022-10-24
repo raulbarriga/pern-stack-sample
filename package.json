@@ -1,0 +1,24 @@
+{
+  "name": "pern-stack-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raulbarriga/pern-stack-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raulbarriga/pern-stack-sample/issues"
+  },
+  "homepage": "https://github.com/raulbarriga/pern-stack-sample#readme"
+}

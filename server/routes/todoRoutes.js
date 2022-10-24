@@ -12,7 +12,7 @@ router.route('/')
     .post(createTodo);
 
 router.route('/:id')
-    .patch(editTodo)
+    .put(editTodo)
     .delete(deleteTodo);
 
 export default router;
